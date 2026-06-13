@@ -13,9 +13,16 @@ try:
 
     first_number = driver.find_element(By.ID, "number1Field")
     second_number = driver.find_element(By.ID, "number2Field")
-    operation_dropdown = driver.find_element(By.ID, "selectOperationDropdown")
+    # operation_dropdown = driver.find_element(By.ID, "selectOperationDropdown")
     calculate_button = driver.find_element(By.ID, "calculateButton")
     answer_field = driver.find_element(By.ID, "numberAnswerField")
+
+    def select_multiply():
+        dropdown = driver.find_element(By.ID, "selectOperationDropdown")
+        dropdown.click()
+        time.sleep(1)
+        multiply_option = driver.find_element(By.XPATH, "//select[@id='selectOperationDropdown']/option[@value='2']")
+        multiply_option.click()
 
     print("Scenarion 1: Success")
 
@@ -25,7 +32,7 @@ try:
     second_number.clear()
     second_number.send_keys("5")
 
-    operation_dropdown.select_by_value("2")
+    select_multiply()
     calculate_button.click()
     time.sleep(2)
 
@@ -40,7 +47,7 @@ try:
     second_number.clear()
     second_number.send_keys("5")
 
-    operation_dropdown.select_by_value("2")
+    select_multiply()
     calculate_button.click()
     time.sleep(2)
 
