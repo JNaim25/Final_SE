@@ -1,0 +1,29 @@
+UNITED INTERNATIONAL UNIVERSITY
+Department of Computer Science and Engineering (CSE)
+Name: Julker Naim
+ID: 0112310136
+CSE 3422: Software Engineering Laboratory
+Lab Final
+
+Calculator Test Cases
+1. Test Case 1: Success
+Title: Success test
+Precondition: Input valid integer
+Steps:
+●  Go to the page that given.
+● Enter valid inputs.
+● Select Multiply
+● Click 'Calculate'.
+Test Data: first_number: 10, second_number: 5
+Expected Result: Test passed! Result: 50
+
+
+2. Test Case 2: Failure
+Title: Fail test
+Precondition: Leave one box empty
+Steps:
+● Go to the page that given.
+● Keep a box empty.
+● Select Multiply
+● Click 'Calculate'.
+Expected Result: Fail Case Executed. Answer field shows: '5'

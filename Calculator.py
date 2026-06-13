@@ -1,10 +1,13 @@
 import time
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+# from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
+
+driver = webdriver.Chrome()
 try:
-    driver = webdriver.Chrome()
-    driver.get("https://testsheepnz.github.io/BasicCalculator.html")
+    url = "https://testsheepnz.github.io/BasicCalculator.html"
+    driver.get(url)
     driver.maximize_window()
     time.sleep(2)
 
@@ -22,7 +25,7 @@ try:
     second_number.clear()
     second_number.send_keys("5")
 
-    operation_dropdown.send_keys("2")
+    operation_dropdown.select_by_value("2")
     calculate_button.click()
     time.sleep(2)
 
@@ -37,12 +40,12 @@ try:
     second_number.clear()
     second_number.send_keys("5")
 
-    operation_dropdown.send_keys("2")
+    operation_dropdown.select_by_value("2")
     calculate_button.click()
     time.sleep(2)
 
     error_result = answer_field.get_attribute("value")
-    print(f"✅ Fail Case Executed. Answer field shows: '{error_result}'")
+    print(f"Fail Case Executed. Answer field shows: '{error_result}'")
 
 finally:
     driver.quit()
